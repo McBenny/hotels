@@ -1,0 +1,106 @@
+.hotel {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  &__visual {
+    position: relative;
+  }
+
+  &__deal {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    background-color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: red;
+  }
+
+  &__info {
+    border-top: 1px solid #ccc;
+    padding-bottom: 1rem;
+  }
+
+  &__name {
+    display: flex;
+    align-content: center;
+    margin: 0.75rem 0 0;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-right: 1rem;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__address {
+    margin: 0.5rem 0;
+    font-size: 0.75rem;
+    color: #787878;
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+  }
+  
+  &__conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.75rem;
+  }
+
+  &__offer {
+    margin: 0.25rem 0 0 0;
+  }
+
+  &__link {
+    text-decoration: underline;
+    color: red;
+
+    &:hover {
+      text-decoration: none;
+      color: darkred;
+    }
+  }
+
+  &__cancellation {
+    color: darkgreen;
+  }
+
+  &__amounts {
+    text-align: right;
+    font-size: 0.75rem;
+  }
+
+  &__night {
+    margin: 0;
+    color: #555;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__currency {
+    margin: 0.25rem 0.15rem 0 0;
+    font-weight: bold;
+  }
+  &__value {
+    font-size: 2rem;
+  }
+
+  &__saving {
+    margin: 0;
+    font-weight: bold;
+    color: red;
+  }
+}

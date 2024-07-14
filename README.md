@@ -1,34 +1,41 @@
-<h1 align="center">Boilerplate React.js + TypeScript + Vite 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/fdaciuk" target="_blank">
-    <img alt="Twitter: fdaciuk" src="https://img.shields.io/twitter/follow/fdaciuk.svg?style=social" />
-  </a>
-</p>
+# Hotels list in React
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+## Initial instructions
+We would like you to work on this coding test for us to see how you would approach building a feature. We think you should spend about 4 hours on the code test, we consider it a starting point to extend and modify in our technical interview with you.
 
-> Boilerplate to create React.js apps with Vite
+### User Story to Implement
 
-## Which techs this boilerplate have in it?
+As a user of Qantas Hotels I would like to see a list of hotels that can be sorted by price.
 
-This boilerplate is ready to be used by devs who want to start a new project using React.js, TypeScript and Jest with Vite.
+### More Information
 
-## Main configurations
+Use the attached image of the search page as a guide and feel free to use any technology that you are comfortable with.
+It is not necessary to match the given design pixel-perfect, e.g. you can use a default font and red and green. Try to stick to the general layout though and don't deviate too much.
 
-- React.js 18+ with TypeScript;
-  - You can import "svgs" with `import { ReactComponent as MyIcon } from './icon-path.svg'`;
-  - You can import any other media (images, videos, etc) that is located inside `src` directory;
-  - You can use absolute imports, using `@` as `src` directory;
-- Eslint:
-  - [Standard](https://standardjs.com/) with some modifications;
-  - React Hooks and other React configurations with [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app) (same used in Create React App);
-- Automatic lint and type-checking with Husky before every commit.
+We are also providing you with a sample API response in form of a JSON file that should be used to generate the results on this page.
+
+Please implement these two sorting options:
+- Price (high-low)
+- Price (low-high)
+
+Star ratings on hotels are divided into two types: ‘star’ and ‘self’ rated. Properties that are ‘self’ rated use a circle icon and properties that are ‘star’ rated use a star icon.
+
+We value writing well tested code at Qantas Group Accommodation and would like to see tests around any code you write.
+
+You can assume this app to only be run in modern browsers (Chrome, Safari, Firefox) supporting recent features.
+
+### Included files
+
+- JSON payload
+- Mock of Qantas search results page
+- Qantas Logo
+
+### Deliverables
+
+- source code
+- commit history
+- instructions to run the app, tests, etc.
+- a readme with comments about your approach and trade-offs you possibly made
 
 ## Usage
 
@@ -44,78 +51,35 @@ Run dev server:
 yarn dev
 ```
 
-You can run type-checking in watch mode in another terminal, if you may:
+## Notes on the build
 
-```sh
-yarn type-check --watch
-```
+### Features
+- If there are no hotels, a specific message is displayed.
+- If there are hotels:
+  - The number of results is displayed,
+  - The sorting options are displayed,
+  - The results are displayed, in the default order.
 
-## Run tests
+### Testing
+As I didn't feel I'd have enough time to complete the whole feature with real testing implemented and proper styling, I preferred to leave it out, and rely on typing. This is not a replacement for production code, but a trade-off for this exercise.
 
-```sh
-yarn test
-```
+### Typing
+I considered all the data would be provided per hotel, apart from the saving part as it's missing for one of the results. I used a few `enum`s to narrow down the typing when it seemed useful.
 
-## Production version
+### Rating
+The implementation of the rating styling is based/copied from Nikita Hlopov (https://nikitahl.com/star-rating-with-css). A rating I found last year and already implemented previously. I added the value as a custom property to be able to display a dynmic value
 
-To generate the production version, you can run:
+### Styling
+The BEM methodology is followed here, which creates a lot of classes but alloows for precise styling, considering the lack of "context".  
+In production, I would consider using variables for colours, with a level of abstraction to decouple the actual colours from their usage (`$red: red;` => `$error-color: $red` => `color: $error-color;`)
 
-```sh
-yarn build
-```
+#### Responsive design
+The build is not espacially responsive, apart from the ellipsis appearing on the hotel name.  
+An obvious implementation could have bee to have the image on top of the data (with a change in the definition of the grid and adjustement to the image), taking the full width of the result card.
 
-All files you have to deploy will be located at the `dist` directory.
-
-### Run production version locally
-
-To check if everything will be ok in production before the deployment, you can run this command after `yarn build`:
-
-```sh
-yarn preview
-```
-
-## Author
-
-👤 **Fernando Daciuk**
-
-* Website: https://daciuk.dev
-* Twitter: [@fdaciuk](https://twitter.com/fdaciuk)
-* Github: [@fdaciuk](https://github.com/fdaciuk)
-* LinkedIn: [@fdaciuk](https://linkedin.com/in/fdaciuk)
-* Instagram : [@fdaciuk](https://instagram.com/fdaciuk)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fdaciuk/boilerplate-vite-react/issues). 
-
-## ✨ Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/fdaciuk"><img src="https://avatars.githubusercontent.com/u/487669?v=4?s=100" width="100px;" alt="Fernando Daciuk"/><br /><sub><b>Fernando Daciuk</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=fdaciuk" title="Code">💻</a> <a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=fdaciuk" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gabepinheiro"><img src="https://avatars.githubusercontent.com/u/45916330?v=4?s=100" width="100px;" alt="Gabriel Pinheiro"/><br /><sub><b>Gabriel Pinheiro</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=gabepinheiro" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://newcapital.in@gmail.com"><img src="https://avatars.githubusercontent.com/u/81476236?v=4?s=100" width="100px;" alt="NewCapital.in"/><br /><sub><b>NewCapital.in</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=SallesCosta" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://vinibispo.com.br"><img src="https://avatars.githubusercontent.com/u/48097622?v=4?s=100" width="100px;" alt="Vinícius Bispo"/><br /><sub><b>Vinícius Bispo</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=vinibispo" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+## Enhancements to consider
+- Implement proper testing,
+- Implement links to reach the hotel/offer
+- 
+## Boilerplate
+I used a boilerplate from **Fernando Daciuk** (https://github.com/fdaciuk/boilerplate-vite-react) to which I added Sass support. I didn't change any other pre-defined setting.
